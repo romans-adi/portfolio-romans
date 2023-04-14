@@ -227,19 +227,6 @@ main {
   position: relative;
 }
 
-.modal-main-layout {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.modal-secondary-layout {
-  display: flex;
-  gap: 5rem;
-  flex-direction: column;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -642,10 +629,6 @@ header .headline .supporting-text {
   display: none;
 }
 
-.modal .modal-mobile-img {
-  width: 100%;
-}
-
 .btn-close {
   position: absolute;
   width: 2.5rem;
@@ -728,6 +711,17 @@ header .headline .supporting-text {
   flex-direction: column;
   gap: 2rem;
   z-index: 99999;
+}
+
+.modal-main-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modal .modal-mobile-img {
+  width: 100%;
 }
 
 .img-container {
