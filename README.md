@@ -49,6 +49,8 @@
     <li>NextGen images</li>
     <li>High performance and accessibility</li>
     <li>Best practice JavaScript</li>
+    <li>Popup mobile menu and windows for buttons in the second section</li>
+    <li>Validation for email in the contact form</li>
   </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
