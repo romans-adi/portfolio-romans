@@ -418,9 +418,10 @@ main {
 
 .flex-row {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 /* HEADER */
@@ -1425,6 +1426,14 @@ input:required:focus:valid {
     padding: 0 0 0 4%;
     margin-top: 0;
     text-align: right;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
 
   .btn-get-in-touch {
