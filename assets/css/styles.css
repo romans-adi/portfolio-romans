@@ -207,6 +207,14 @@ main {
 }
 
 /* COMMON STYLES */
+.red {
+  color: red;
+}
+
+.transparent {
+  color: transparent;
+}
+
 .blue {
   color: #172b4d;
 }
@@ -266,6 +274,10 @@ main {
   box-shadow: 0 0.5rem 1rem #15873d;
   background-color: #15873d;
   color: #fff;
+}
+
+.btn-success:focus-visible {
+  outline: none !important;
 }
 
 .btn-success:active {
@@ -409,6 +421,19 @@ main {
 
 .nav-toggle[aria-expanded=true] .burger .burger-line-bottom {
   rotate: -45deg;
+}
+
+.error {
+  transition: 1s all ease-in-out;
+  font-weight: 600;
+  flex: 0 1 70%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* HEADER */
@@ -1019,9 +1044,9 @@ textarea:required:focus:valid {
   box-shadow: 0 0 0.625rem #36b37e;
 }
 
-input:focus {
-  border: 0.063rem solid tan;
-  box-shadow: 0 0 0.625rem tan;
+.valid-input {
+  border: 0.063rem solid #36b37e;
+  box-shadow: 0 0 0.625rem #36b37e;
 }
 
 input:required:focus:valid {
