@@ -607,8 +607,7 @@ header .headline .supporting-text {
 
 .tools-list {
   display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .tool {
@@ -623,7 +622,7 @@ header .headline .supporting-text {
   letter-spacing: 0.03em;
   border-radius: 0.25rem;
   background-color: #d0d9d4;
-  flex: 0 1 25%;
+  flex: 1 1 auto;
 }
 
 .hidden {
