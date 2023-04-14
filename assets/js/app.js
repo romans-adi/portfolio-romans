@@ -259,3 +259,37 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
   }
 });
+
+const nameInput = document.querySelector('#username');
+const emailInput = document.querySelector('#email');
+const messageInput = document.querySelector('#message');
+
+const formData = JSON.parse(localStorage.getItem('formData')) || {};
+
+if (formData.name) {
+  nameInput.value = formData.name;
+}
+
+if (formData.email) {
+  emailInput.value = formData.email;
+}
+
+if (formData.comments) {
+  messageInput.value = formData.message;
+}
+
+form.addEventListener('input', (event) => {
+  formData[event.target.name] = event.target.value;
+  localStorage.setItem('formData', JSON.stringify(formData));
+});
+
+const savedData = JSON.parse(localStorage.getItem('formData'));
+if (savedData) {
+  emailInput.value = savedData.email;
+  messageInput.value = savedData.message;
+  nameInput.value = savedData.username;
+}
+
+form.addEventListener('submit', () => {
+  localStorage.clear();
+});
