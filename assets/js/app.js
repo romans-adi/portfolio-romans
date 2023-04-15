@@ -243,22 +243,16 @@ form.addEventListener('input', () => {
   }
 });
 
-function validateForm() {
+form.addEventListener('submit', (e) => {
   const errorMessage = document.querySelector('.error');
   const email = document.getElementById('email').value;
   const regex = /^[a-z]+@[a-z0-9-]+\.[a-z]{2,3}$/g;
   if (!email.match(regex)) {
     switchErrorColor(errorMessage);
-    return false;
-  }
-  return true;
-}
-
-form.addEventListener('submit', (e) => {
-  if (validateForm() === false) {
     e.preventDefault();
   }
-});
+  return true;
+})
 
 const nameInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email');
