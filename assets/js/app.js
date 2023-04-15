@@ -235,7 +235,7 @@ function switchErrorColor(variable) {
 form.addEventListener('input', () => {
   const email = document.getElementById('email').value;
   const emailInput = document.getElementById('email');
-  const regex = /^[a-z]+@[a-z0-9-]+\.[a-z]{2,3}/g;
+  const regex = /^[a-z]+@[a-z0-9-]+\.[a-z]{2,3}$/g;
   if (email.match(regex)) {
     emailInput.classList.add('valid-input');
   } else {
@@ -246,7 +246,7 @@ form.addEventListener('input', () => {
 function validateForm() {
   const errorMessage = document.querySelector('.error');
   const email = document.getElementById('email').value;
-  const regex = /^[a-z]+@[a-z0-9-]+\.[a-z]{2,3}/g;
+  const regex = /^[a-z]+@[a-z0-9-]+\.[a-z]{2,3}$/g;
   if (!email.match(regex)) {
     switchErrorColor(errorMessage);
     return false;
