@@ -252,7 +252,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
   }
   return true;
-})
+});
 
 const nameInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email');
