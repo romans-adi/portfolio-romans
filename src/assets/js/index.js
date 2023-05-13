@@ -32,8 +32,6 @@ navLink.forEach((navLink) => navLink.addEventListener('click', () => {
   toggleBurger();
 }));
 
-// CREATING OBJECT
-
 const container = document.getElementById('projects-set');
 
 const projects = [
