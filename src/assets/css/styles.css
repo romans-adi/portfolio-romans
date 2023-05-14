@@ -659,26 +659,35 @@ header .headline .supporting-text {
   color: #344563;
 }
 
-.modal {
+.modal-overlay {
+  display: none;
+  z-index: 7777;
+}
+
+.modal-overlay.active {
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  background-color: white;
-  overflow: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
   width: 100vw;
   height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4rem); /* Adjust the blur intensity as needed */
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 90%;
+  left: 5%;
+  height: 100%;
+  overflow: auto;
+  z-index: 9999;
 }
 
 .modal.active {
-  visibility: visible;
-  opacity: 1;
+  display: flex;
   transition-delay: 0s;
 }
 
@@ -687,24 +696,22 @@ header .headline .supporting-text {
   border-radius: 10px;
   padding: 3%;
   overflow-y: auto;
-  background: #fff;
-  max-width: 950px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   position: relative;
-  width: 80%;
-  height: 80%;
-  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
 }
 
 .img-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  contain: content;
   width: 100%;
-  max-width: 872px;
-  max-height: 616px;
+  height: 100%;
 }
 
 .modal-desktop-img {
@@ -1254,55 +1261,34 @@ input:required:focus:valid {
     transition: all 1s ease-in-out;
   }
 
+  .project-card.modal-active {
+    margin: 0;
+    width: auto;
+  }
+
   .project-card:hover {
-    transform: translateY(-2%);
+    /* transform: translateY(-2%); */
   }
 
   .btn-see-project {
     margin-bottom: 1rem;
   }
 
-  #modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+  .modal-overlay.active {
+    height: 120vh;
+    margin-top: -1rem;
   }
 
-  #modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  .modal {
+    width: 70%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  #close-modal {
-    margin-top: 10px;
-  }
-
-  .modal-container {
-    padding: 5%;
-  }
-
-  .overlay {
-    content: "";
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    z-index: 10;
-  }
-
-  .overlay .overlay-content {
-    height: 100%;
-    overflow: scroll;
+  .img-container {
+    margin-top: 10%;
   }
 
   .modal .modal-desktop-img {

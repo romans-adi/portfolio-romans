@@ -106,9 +106,7 @@ const projects = [
 // CREATING CARDS
 
 projects.forEach((project) => {
-  const card = document.createElement('div');
-  card.style.zIndex = '3';
-  card.innerHTML = `
+  container.innerHTML += `
     <div class="project-card relative" id="${project.id}">
       <picture class="placeholder-img">
         <h3 class="project-card-heading">${project.prName}</h3>
@@ -119,7 +117,7 @@ projects.forEach((project) => {
       <div class="project-card-content">
         <button type="button" class="btn-success btn-see-project btn-open">See Project</button>
         <div class="modal-overlay" id="modal-overlay">
-  <div class="modal" id="${project.id}-modal">
+  <div class="modal">
     <button class="modal-toggle btn-close">
       <svg class="modal-close" viewBox="0 0 50 50" width="14" height="14">
          <line x1="0" y1="0" x2="50" y2="50" />
@@ -157,37 +155,42 @@ projects.forEach((project) => {
       </div>
     </div>
   `;
-  container.appendChild(card);
 });
 
 // MODAL WINDOW
 
-const openModalButtons = document.querySelectorAll('.btn-open');
-const closeModalButtons = document.querySelectorAll('.modal-toggle');
-const modalOverlay = document.getElementById('modal-overlay');
+const modalBtns = document.querySelectorAll('.btn-open');
+const modals = document.querySelectorAll('.modal');
+const overlay = document.querySelectorAll('.modal-overlay');
+const card = document.querySelectorAll('.project-card')
 
-openModalButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const modal = document.getElementById(button.parentNode.parentNode.id + '-modal');
-    modal.classList.add('active');
-    modalOverlay.classList.add('active');
+modalBtns.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    modals[i].classList.add('active');
+    overlay[i].classList.add('active');
+    container.style.margin = '0';
+    card[i].classList.add('modal-active');
+    card.forEach((c, j) => {
+      if (j !== i) {
+        c.classList.add('hidden');
+      }
+    });
+    card[i].classList.add('modal-active');
   });
 });
 
-closeModalButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal');
-    modal.classList.remove('active');
-    modalOverlay.classList.remove('active');
+const closeBtns = document.querySelectorAll('.btn-close');
+closeBtns.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    modals[i].classList.remove('active');
+    overlay[i].classList.remove('active');
+    container.style.margin = '0 auto';
+    card[i].classList.remove('modal-active');
+    card.forEach((c, j) => {
+      c.classList.remove('hidden');
+      c.classList.remove('modal-active');
+    });
   });
-});
-
-modalOverlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active');
-  modals.forEach((modal) => {
-    modal.classList.remove('active');
-  });
-  modalOverlay.classList.remove('active');
 });
 
 // VALIDATION
