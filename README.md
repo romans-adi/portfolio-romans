@@ -59,7 +59,7 @@ The **"Romans's Portfolio"** project serves as a collection of details regarding
 
 ## 🚀 Live Demo <a name="live-demo" target="_blank"></a>
 
-- [Online version of my project](https://romans-adi.github.io/)
+- [Online version of my project](https://romans-adi.github.io/portfolio-romans)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
