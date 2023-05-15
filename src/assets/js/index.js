@@ -219,6 +219,7 @@ function closeModal(index) {
     c.classList.remove('hidden');
     c.classList.remove('modal-active');
   });
+  resetStyles();
 }
 
 function updateOverlayPosition(overlay) {
