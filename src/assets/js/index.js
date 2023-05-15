@@ -118,6 +118,7 @@ projects.forEach((project) => {
         <button type="button" class="btn-success btn-see-project btn-open">See Project</button>
         <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
+            <h3 class="modal-heading blue">${project.prName}</h3>
     <button class="modal-toggle btn-close">
       <svg class="modal-close" viewBox="0 0 50 50" width="14" height="14">
          <line x1="0" y1="0" x2="50" y2="50" />
@@ -132,7 +133,6 @@ projects.forEach((project) => {
       </div>
       <div class="modal-main-layout">
         <div class="top">
-          <h3 class="modal-heading blue">${project.prName}</h3>
           <ul class="tools-list">
             ${project.technologies.map(tool => `<li class="tool">${tool}</li>`).join('')}
           </ul>
@@ -170,6 +170,9 @@ modalBtns.forEach((btn, i) => {
     overlay[i].classList.add('active');
     container.style.margin = '0';
     card[i].classList.add('modal-active');
+    card[i].style.height = '100vh';
+    card[i].style.marginTop = '-150px';
+    topNav.style.display = 'none';
     card.forEach((c, j) => {
       if (j !== i) {
         c.classList.add('hidden');
@@ -186,12 +189,16 @@ closeBtns.forEach((btn, i) => {
     overlay[i].classList.remove('active');
     container.style.margin = '0 auto';
     card[i].classList.remove('modal-active');
+    card[i].style.height = '100%';
+    card[i].style.marginTop = '0';
+    topNav.style.display = 'flex';
     card.forEach((c, j) => {
       c.classList.remove('hidden');
       c.classList.remove('modal-active');
     });
   });
 });
+
 
 // VALIDATION
 
