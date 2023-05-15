@@ -45,7 +45,7 @@ const projects = [
     mobileImgWebP: 'assets/img/screenshots/portfolio-phone.webp',
     desktopImgWebP: 'assets/img/screenshots/portfolio.webp',
     technologies: ['CSS', 'JavaScript', 'HTML', 'Webpack', 'SCSS'],
-    liveVersion: 'https://romans-adi.github.io/romans-portfolio/',
+    liveVersion: 'https://romans-adi.github.io/portfolio-romans/',
     source: 'https://github.com/romans-adi/romans-adi.github.io',
   },
 
@@ -190,6 +190,20 @@ function openModal(index) {
     }
   });
   card[index].classList.add('modal-active');
+}
+
+function resetStyles() {
+  container.style.margin = '';
+  card.forEach((c) => {
+    c.style.height = '';
+    c.style.marginTop = '';
+  });
+  topNav.style.display = 'flex';
+  workHeading.style.display = '';
+  worksSection.style.padding = '';
+  mainSection.style.padding = '';
+  worksSection.style.marginTop = '';
+  document.body.style.overflow = 'auto';
 }
 
 function closeModal(index) {
