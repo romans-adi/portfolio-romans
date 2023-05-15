@@ -72,7 +72,7 @@ const projects = [
     mobileImgWebP: 'assets/img/screenshots/awesome-phone.webp',
     desktopImgWebP: 'assets/img/screenshots/awesome.webp',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Webpack'],
-    liveVersion: 'https://romans-adi.github.io/todo-app/',
+    liveVersion: 'https://romans-adi.github.io/awesome-books/',
     source: 'https://github.com/romans-adi/awesome-books',
   },
   {
