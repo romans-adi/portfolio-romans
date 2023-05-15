@@ -118,13 +118,15 @@ projects.forEach((project) => {
         <button type="button" class="btn-success btn-see-project btn-open">See Project</button>
         <div class="modal-overlay" id="modal-overlay">
   <div class="modal">
-            <h3 class="modal-heading blue">${project.prName}</h3>
-    <button class="modal-toggle btn-close">
-      <svg class="modal-close" viewBox="0 0 50 50" width="14" height="14">
-         <line x1="0" y1="0" x2="50" y2="50" />
-         <line x1="50" y1="0" x2="0" y2="50" />
-      </svg>
-    </button>
+  <div class="flex w-full">
+            <h3 class="modal-heading flex space-between">${project.prName}
+            <button class="modal-toggle btn-close">
+            <svg class="modal-close" viewBox="0 0 50 50" width="14" height="14">
+               <line x1="0" y1="0" x2="50" y2="50" />
+               <line x1="50" y1="0" x2="0" y2="50" />
+            </svg>
+          </button></h3>
+    </div>
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
       <div class="img-container">
@@ -161,44 +163,67 @@ projects.forEach((project) => {
 
 const modalBtns = document.querySelectorAll('.btn-open');
 const modals = document.querySelectorAll('.modal');
-const overlay = document.querySelectorAll('.modal-overlay');
+const overlays = document.querySelectorAll('.modal-overlay');
 const card = document.querySelectorAll('.project-card')
+const workHeading = document.querySelector('.works-heading');
+const worksSection = document.querySelector('#works');
+const mainSection = document.querySelector('main');
+
+
+function openModal(index) {
+  modals[index].classList.add('active');
+  overlays[index].classList.add('active');
+  overlays.forEach(updateOverlayPosition);
+  container.style.margin = '0';
+  card[index].classList.add('modal-active');
+  card[index].style.height = '100vh';
+  topNav.style.display = 'none';
+  workHeading.style.display = 'none';
+  worksSection.style.padding = '0';
+  mainSection.scrollIntoView({ behavior: 'smooth' });
+  mainSection.style.padding = '0';
+  worksSection.style.marginTop = '0';
+  document.body.style.overflow = 'hidden';
+  card.forEach((c, j) => {
+    if (j !== index) {
+      c.classList.add('hidden');
+    }
+  });
+  card[index].classList.add('modal-active');
+}
+
+function closeModal(index) {
+  modals[index].classList.remove('active');
+  overlays[index].classList.remove('active');
+  container.style.margin = '0 auto';
+  card[index].classList.remove('modal-active');
+  card[index].style.height = '100%';
+  card[index].style.marginTop = '0';
+  topNav.style.display = 'flex';
+  document.body.style.overflow = 'auto';
+  card.forEach((c, j) => {
+    c.classList.remove('hidden');
+    c.classList.remove('modal-active');
+  });
+}
+
+function updateOverlayPosition(overlay) {
+  overlay.style.top = 0;
+  overlay.style.height = '100vh';
+}
 
 modalBtns.forEach((btn, i) => {
   btn.addEventListener('click', () => {
-    modals[i].classList.add('active');
-    overlay[i].classList.add('active');
-    container.style.margin = '0';
-    card[i].classList.add('modal-active');
-    card[i].style.height = '100vh';
-    card[i].style.marginTop = '-150px';
-    topNav.style.display = 'none';
-    card.forEach((c, j) => {
-      if (j !== i) {
-        c.classList.add('hidden');
-      }
-    });
-    card[i].classList.add('modal-active');
+    openModal(i);
   });
 });
 
 const closeBtns = document.querySelectorAll('.btn-close');
 closeBtns.forEach((btn, i) => {
   btn.addEventListener('click', () => {
-    modals[i].classList.remove('active');
-    overlay[i].classList.remove('active');
-    container.style.margin = '0 auto';
-    card[i].classList.remove('modal-active');
-    card[i].style.height = '100%';
-    card[i].style.marginTop = '0';
-    topNav.style.display = 'flex';
-    card.forEach((c, j) => {
-      c.classList.remove('hidden');
-      c.classList.remove('modal-active');
-    });
+    closeModal(i);
   });
 });
-
 
 // VALIDATION
 
