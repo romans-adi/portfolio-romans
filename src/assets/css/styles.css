@@ -723,7 +723,7 @@ header .headline .supporting-text {
 
 .img-container {
   display: flex;
-  border: 2px solid inherit;
+  border: 2px solid transparent;
   border-radius: 11px;
   flex-direction: column;
   align-items: center;
@@ -1320,8 +1320,6 @@ input:required:focus:valid {
 
   .modal .modal-desktop-img {
     display: flex;
-    width: 100%;
-    height: 100%;
   }
 
   .modal-mobile-img {
