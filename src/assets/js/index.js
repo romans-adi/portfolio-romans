@@ -37,16 +37,16 @@ const container = document.getElementById('projects-set');
 const projects = [
   {
     id: 'project-1',
-    prName: 'Portfolio',
+    prName: 'TV Hub Series',
     description:
-      "Roman's Portfolio is a project that showcases his skills and tools used in previous works, providing information about his experience and expertise.",
-    mobileImg: 'assets/img/screenshots/portfolio-phone.jpg',
-    desktopImg: 'assets/img/screenshots/portfolio.png',
-    mobileImgWebP: 'assets/img/screenshots/portfolio-phone.webp',
-    desktopImgWebP: 'assets/img/screenshots/portfolio.webp',
-    technologies: ['CSS', 'JavaScript', 'HTML', 'Webpack', 'SCSS'],
-    liveVersion: 'https://romans-adi.github.io/portfolio-romans/',
-    source: 'https://github.com/romans-adi/romans-adi.github.io',
+      "TV Hub Series is a web application developed using HTML, CSS, and JavaScript. It serves as a centralized platform for TV series enthusiasts, offering a user-friendly interface to explore, discover, and watch a vast collection of TV series. The application utilizes RESTful APIs to fetch data about series, episodes, and cast information from external sources, ensuring up-to-date and comprehensive content. The frontend is designed with a responsive layout, adapting seamlessly to different devices and screen sizes for an optimal viewing experience. The codebase follows modular and maintainable architecture patterns, adhering to industry best practices for scalability and extensibility. TV Hub Series aims to provide an immersive and convenient TV series browsing experience, combining modern design elements with reliable functionality.",
+    mobileImg: 'assets/img/screenshots/tv-hub-phone.jpg',
+    desktopImg: 'assets/img/screenshots/tv-hub.png',
+    mobileImgWebP: 'assets/img/screenshots/tv-hub-phone.webp',
+    desktopImgWebP: 'assets/img/screenshots/tv-hub.webp',
+    technologies: ['CSS', 'JavaScript', 'HTML', 'Webpack', 'Jest'],
+    liveVersion: 'https://alvaroiporre.github.io/JavaScript-Capstone-Project/',
+    source: 'https://github.com/alvaroiporre/JavaScript-Capstone-Project',
   },
 
   {
@@ -100,6 +100,19 @@ const projects = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Webpack'],
     liveVersion: 'https://romans-adi.github.io/lol-draft-2023/',
     source: 'https://github.com/romans-adi/lol-draft-2023',
+  },
+  {
+    id: 'project-6',
+    prName: 'Leaderboard',
+    description:
+      "The Leaderboard is a platform that allows users to view and add scores to a leaderboard. It provides a user-friendly interface for tracking and displaying recent scores, along with the option to add new scores. The application uses API requests and local storage to store and synchronize the data. The synchronization process ensures that the data remains intact even when there is no response from the server or when data retrieval is not possible. When new data is fetched from the server, it is updated in the local storage. Additionally, any new scores that were not sent yet, are sent to the server. The application logic revolves around comparing the existing data stored in the local storage with the data fetched from the server to ensure consistency and accuracy.",
+    mobileImg: 'assets/img/screenshots/leaderboard-mobile.jpg',
+    desktopImg: 'assets/img/screenshots/leaderboard.png',
+    mobileImgWebP: 'assets/img/screenshots/leaderboard-mobile.webp',
+    desktopImgWebP: 'assets/img/screenshots/leaderboard.webp',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Webpack', 'Tailwind'],
+    liveVersion: 'https://romans-adi.github.io/leaderboard/',
+    source: 'https://github.com/romans-adi/leaderboard',
   },
 ];
 
